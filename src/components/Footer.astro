@@ -1,0 +1,106 @@
+---
+// src/components/Footer.astro
+// Script de componente (JavaScript/TypeScript)
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { name: 'Twitter', url: 'https://twitter.com', icon: '🐦' },
+  { name: 'GitHub', url: 'https://github.com', icon: '🐙' },
+];
+---
+
+<!-- Template HTML -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Mi Empresa</h3>
+        <p>Creando soluciones innovadoras desde 2020</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="/about">Acerca de</a></li>
+          <li><a href="/services">Servicios</a></li>
+          <li><a href="/contact">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          {socialLinks.map(link => (
+            <a href={link.url} target="_blank" rel="noopener">
+              <span>{link.icon}</span>
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Mi Empresa. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section h3,
+  .footer-section h4 {
+    margin-bottom: 1rem;
+    color: #007AFF;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-section a:hover {
+    color: #007AFF;
+  }
+  
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    text-align: center;
+    color: #888;
+  }
+</style>
