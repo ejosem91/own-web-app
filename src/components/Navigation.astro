@@ -1,0 +1,53 @@
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .navbar a {
+        color: #111827;
+        text-decoration: none;
+        padding: 8px 12px;
+        transition: color 0.2s;
+    }
+
+    .navbar a:hover {
+        color: #2563eb;
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        gap: 16px;
+    }
+
+    /* Ensure no horizontal scrollbars appear */
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+
+<nav class="navbar">
+    <div class="logo">My Website</div>
+    <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
